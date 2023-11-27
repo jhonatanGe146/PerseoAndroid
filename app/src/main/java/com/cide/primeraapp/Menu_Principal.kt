@@ -12,7 +12,7 @@ class Menu_Principal : AppCompatActivity() {
         val btn_cerrarSesion = findViewById<Button>(R.id.btn_cerrarSesion)
         val btn_usuario = findViewById<Button>(R.id.btn_usuario)
         val btn_habitacion = findViewById<Button>(R.id.btn_habitacion)
-        val btn_reservar = findViewById<Button>(R.id.btn_reservar)
+        val btn_servicios = findViewById<Button>(R.id.btn_servicios)
 
         btn_cerrarSesion.setOnClickListener {
             startActivity(Intent(applicationContext, MainActivity::class.java))
@@ -24,8 +24,8 @@ class Menu_Principal : AppCompatActivity() {
             startActivity(Intent(applicationContext, modRoom::class.java))
         }
 
-        btn_reservar.setOnClickListener {
-            startActivity(Intent(applicationContext, reservar::class.java))
+        btn_servicios.setOnClickListener {
+            startActivity(Intent(applicationContext, modServicio::class.java))
         }
 
     }

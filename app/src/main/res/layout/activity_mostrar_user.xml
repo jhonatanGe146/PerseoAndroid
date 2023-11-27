@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mostrar_user">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="Datos usuario"
+            android:textAlignment="center"
+            android:textColor="@color/verde"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/Fnombre"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:drawableStart="@drawable/person"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Ingrese  su nombre "
+            android:inputType="text" />
+
+        <EditText
+
+            android:id="@+id/Fapellido"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:drawableStart="@drawable/person"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Ingrese  su Apellido "
+            android:inputType="text" />
+
+        <EditText
+
+            android:id="@+id/FTipoDoc"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Tipo Documento "
+            android:inputType="number" />
+
+        <EditText
+
+            android:id="@+id/Fdocumento"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:drawableStart="@drawable/documento"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Documento "
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="false"
+            android:longClickable="false" />
+
+
+        <EditText
+            android:id="@+id/Fcorreo"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:drawableStart="@drawable/email"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Correo Electronico"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/Ftelefono"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:drawableStart="@drawable/phone"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Telefono"
+            android:inputType="text"
+
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_actualizar"
+            android:layout_width="237dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:backgroundTint="@color/verde"
+            android:text="Actualizar"
+
+            android:textColor="@color/white"
+
+            />
+        <Button
+            android:id="@+id/btn_eliminar"
+            android:layout_width="237dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:backgroundTint="@color/verde"
+            android:layout_marginTop="10dp"
+            android:text="Eliminar"
+            android:textColor="@color/white"
+
+            />
+
+        <Button
+            android:id="@+id/btn_volver"
+            android:layout_width="237dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:backgroundTint="@color/verde"
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="10dp"
+            android:text="volver"
+            android:textColor="@color/white"
+
+            />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

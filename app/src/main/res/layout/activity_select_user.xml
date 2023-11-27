@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".select_user">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"/>
+
+
+    <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="Buscar Usuario"
+            android:textAlignment="viewStart"
+            android:textColor="@color/verde"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/FDoc"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="25dp"
+            android:drawableStart="@drawable/person"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Ingrese  nro Documento "
+            android:inputType="text" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_registrar"
+            android:layout_width="237dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:paddingEnd="69dp"
+            android:paddingStart="90dp"
+            android:backgroundTint="@color/verde"
+            android:text="Buscar"
+            android:onClick="select_user"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/select"
+
+            />
+
+
+        <Button
+            android:id="@+id/btn_volver"
+            android:layout_width="237dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="16dp"
+            android:paddingEnd="70dp"
+            android:paddingStart="90dp"
+            android:text="Volver"
+            android:backgroundTint="@color/verde"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/exit"
+            />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

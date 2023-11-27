@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".reservar">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="Reservar"
+            android:textAlignment="center"
+            android:textColor="@color/verde"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/fechaEntradaEditText"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:hint="Fecha de Entrada"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/fechaSalidaEditText"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:hint="Fecha de Salida"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none"
+            android:layout_below="@id/fechaEntradaEditText"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+
+            android:id="@+id/cant_a"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Cantidad de adultos "
+            android:inputType="number" />
+
+        <EditText
+
+            android:id="@+id/cant_n"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="cantidad de niños "
+            android:inputType="number" />
+
+        <EditText
+
+            android:id="@+id/nro_doc"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="Numero de documento"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_reservar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="16dp"
+            android:paddingEnd="70dp"
+            android:paddingStart="90dp"
+            android:text="Reservar"
+            android:padding="12dp"
+            android:backgroundTint="@color/verde"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/exit"
+            />
+
+
+        <Button
+            android:id="@+id/btn_volver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="100dp"
+            android:paddingEnd="70dp"
+            android:paddingStart="90dp"
+            android:text="Volver"
+            android:padding="12dp"
+            android:backgroundTint="@color/verde"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/exit"
+            />
+
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

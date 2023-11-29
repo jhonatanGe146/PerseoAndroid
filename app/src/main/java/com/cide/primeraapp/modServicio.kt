@@ -10,14 +10,19 @@ class modServicio : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mod_servicio)
          val btn_volver = findViewById<Button>(R.id.btn_volver)
-         val btn_agregar = findViewById<Button>(R.id.btn_agregar)
+        //val btn_agregar = findViewById<Button>(R.id.btn_agregar)
+        val btn_consultar = findViewById<Button>(R.id.btn_consultar)
+
         btn_volver.setOnClickListener {
             startActivity(Intent(applicationContext, Menu_Principal::class.java))
         }
 
-        btn_agregar.setOnClickListener {
+        /*btn_agregar.setOnClickListener {
             startActivity(Intent(applicationContext, registrar_servicio::class.java))
 
+        }*/
+        btn_consultar.setOnClickListener {
+            startActivity(Intent(applicationContext, mostrar_servicios::class.java))
         }
     }
 }

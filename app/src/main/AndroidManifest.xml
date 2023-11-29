@@ -15,6 +15,9 @@
         android:theme="@style/Theme.PrimeraApp"
         tools:targetApi="31">
         <activity
+            android:name=".mostrar_servicios"
+            android:exported="false" />
+        <activity
             android:name=".registrar_servicio"
             android:exported="false" />
         <activity

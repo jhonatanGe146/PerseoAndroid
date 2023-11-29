@@ -37,21 +37,6 @@
         android:gravity="center_horizontal">
 
         <Button
-            android:id="@+id/btn_agregar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:paddingEnd="70dp"
-            android:paddingStart="90dp"
-            android:text="Agregar Servicio"
-            android:padding="12dp"
-            android:backgroundTint="@color/verde"
-            android:textColor="@color/white"
-            android:drawableEnd="@drawable/person2"
-            />
-
-        <Button
             android:id="@+id/btn_consultar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

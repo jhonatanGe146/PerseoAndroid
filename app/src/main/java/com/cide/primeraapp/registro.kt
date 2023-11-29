@@ -15,7 +15,6 @@ import com.android.volley.toolbox.Volley
 
 
 class registro : AppCompatActivity() {
-
     var Fnombre:EditText?=null
     var Fapellido: EditText?=null
     var FTipoDoc: EditText?=null
@@ -25,9 +24,7 @@ class registro : AppCompatActivity() {
     var Fpassword:EditText?=null
     var Fpassword2:EditText?=null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
         Fnombre = findViewById(R.id.Fnombre)

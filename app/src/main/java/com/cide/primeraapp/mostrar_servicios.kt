@@ -21,7 +21,7 @@ import org.json.JSONObject
 
 class mostrar_servicios : AppCompatActivity() {
     var listaServicio: TableLayout? = null
-
+    var id_servicio: EditText?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_servicios)
@@ -29,6 +29,7 @@ class mostrar_servicios : AppCompatActivity() {
         val btn_volver = findViewById<Button>(R.id.btn_volver)
         val btn_eliminar = findViewById<Button>(R.id.btn_eliminar)
         val btn_crear = findViewById<Button>(R.id.btn_crear)
+        id_servicio = findViewById<EditText>(R.id.id_serv)
 
         btn_crear.setOnClickListener {
             startActivity(Intent(applicationContext, registrar_servicio::class.java))
@@ -39,25 +40,31 @@ class mostrar_servicios : AppCompatActivity() {
         }
 
         btn_eliminar.setOnClickListener {
-            val id_serv = findViewById<EditText>(R.id.id_serv)
-            val queue = Volley.newRequestQueue(this)
-            val url = "https://phytotoxic-sponsor.000webhostapp.com/androidproject/delete_servicio.php"
-            val resultadoPost = object : StringRequest(Request.Method.POST, url,
-                Response.Listener<String> { response ->
-                    Toast.makeText(this, "Eliminacion Completa ", Toast.LENGTH_LONG).show()
-                }, Response.ErrorListener { error ->
-                    Toast.makeText(this, "Error Usuario Inexistente", Toast.LENGTH_LONG).show()
-                }) {
-                override fun getParams(): MutableMap<String, String>? {
-                    val parametros = HashMap<String, String>()
-                    parametros.put("id", id_serv?.text.toString())
+            if (!validarCamposVacios()) {
+                val id_serv = findViewById<EditText>(R.id.id_serv)
+                val queue = Volley.newRequestQueue(this)
+                val url = "https://phytotoxic-sponsor.000webhostapp.com/androidproject/delete_servicio.php"
+                val resultadoPost = object : StringRequest(Request.Method.POST, url,
+                    Response.Listener<String> { response ->
+                        Toast.makeText(this, "Eliminacion Completa ", Toast.LENGTH_LONG).show()
+                    }, Response.ErrorListener { error ->
+                        Toast.makeText(this, "Error Usuario Inexistente", Toast.LENGTH_LONG).show()
+                    }) {
+                    override fun getParams(): MutableMap<String, String>? {
+                        val parametros = HashMap<String, String>()
+                        parametros.put("id", id_serv?.text.toString())
 
-                    return parametros
-                }
+                        return parametros
+                    }
             }
             queue.add(resultadoPost)
-            startActivity(Intent(applicationContext, modServicio::class.java))
+            startActivity(Intent(applicationContext, modServicio::class.java))}
+            else{
+                Toast.makeText(this, "Debes Poner el Id del servicio", Toast.LENGTH_SHORT).show()
+
+            }
         }
+
 
         var queue = Volley.newRequestQueue(this)
         var url = "https://phytotoxic-sponsor.000webhostapp.com/androidproject/select_servicios.php"
@@ -101,4 +108,18 @@ class mostrar_servicios : AppCompatActivity() {
         )
         queue.add(jsonObjectRequest)
     }
+    fun select_servicio (view: View){
+        val id_serv = findViewById<EditText>(R.id.id_serv)
+        var intent = Intent(this , update_servicio::class.java)
+        intent .putExtra("id_serv", id_serv.text.toString())
+        startActivity(intent)
+
+    }
+
+    private fun validarCamposVacios(): Boolean {
+        val id = id_servicio?.text.toString()
+
+        return id.isEmpty()
+    }
+
 }

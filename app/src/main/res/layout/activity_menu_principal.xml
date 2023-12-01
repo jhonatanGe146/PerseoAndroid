@@ -98,6 +98,7 @@ tools:context=".Menu_Principal">
         android:paddingStart="90dp"
         android:padding="12dp"
         android:text="Servicios"
+        android:drawableEnd="@drawable/servicio"
         android:backgroundTint="@color/verde"
         android:textColor="@color/white"
 

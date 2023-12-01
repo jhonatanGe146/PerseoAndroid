@@ -27,7 +27,7 @@ class registrar_servicio : AppCompatActivity() {
         val btn_registrar = findViewById<Button>(R.id.btn_registrar_servicio)
 
         btn_volver.setOnClickListener {
-            startActivity(Intent(applicationContext, modServicio::class.java))
+            startActivity(Intent(applicationContext, mostrar_servicios::class.java))
         }
         btn_registrar.setOnClickListener {
             if (!validarCamposVacios()) {

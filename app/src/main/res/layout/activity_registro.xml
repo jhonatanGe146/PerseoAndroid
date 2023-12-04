@@ -53,17 +53,15 @@
             android:hint="Ingrese  su Apellido "
             android:inputType="text" />
 
-        <EditText
-
+        <Spinner
             android:id="@+id/FTipoDoc"
-            android:layout_width="299dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="25dp"
-            android:fontFamily="@font/roboto_medium"
-            android:hint="Tipo Documento "
-            android:inputType="number" />
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+
+            ></Spinner>
 
         <EditText
 

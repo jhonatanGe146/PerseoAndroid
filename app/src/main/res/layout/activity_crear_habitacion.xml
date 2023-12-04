@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".reservar">
+    tools:context=".crear_habitacion">
 
 
     <LinearLayout
@@ -20,71 +20,73 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="25dp"
             android:fontFamily="@font/roboto_black"
-            android:text="Reservar"
+            android:text="Crear Habitación"
             android:textAlignment="center"
             android:textColor="@color/verde"
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/fechaEntradaEditText"
-            android:layout_width="299dp"
-            android:layout_height="wrap_content"
-            android:hint="Fecha de Entrada"
-            android:focusable="false"
-            android:clickable="true"
-            android:inputType="none"
-            android:layout_marginBottom="16dp"/>
 
-        <EditText
-            android:id="@+id/fechaSalidaEditText"
-            android:layout_width="299dp"
-            android:layout_height="wrap_content"
-            android:hint="Fecha de Salida"
-            android:focusable="false"
-            android:clickable="true"
-            android:inputType="none"
-            android:layout_below="@id/fechaEntradaEditText"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"/>
-
-        <EditText
-
-            android:id="@+id/cant_a"
+            android:id="@+id/Fnum_hab"
             android:layout_width="299dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="25dp"
             android:fontFamily="@font/roboto_medium"
-            android:hint="Cantidad de adultos "
-            android:inputType="number" />
-
-        <EditText
-
-            android:id="@+id/cant_n"
-            android:layout_width="299dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="25dp"
-            android:fontFamily="@font/roboto_medium"
-            android:hint="cantidad de niños "
-            android:inputType="number" />
-
-        <EditText
-
-            android:id="@+id/nro_doc"
-            android:layout_width="299dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="25dp"
-            android:fontFamily="@font/roboto_medium"
-            android:hint="Numero de documento"
+            android:hint="Nro Habitación "
             android:inputType="text" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="Tipo Habitación"
+            android:textAlignment="textStart"
+            android:textColor="@color/gris"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/FTipoHab"
+            android:layout_width="299dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+
+            />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="Estado Habitación"
+            android:textAlignment="textStart"
+            android:textColor="@color/gris"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/FEstadohab"
+            android:layout_width="299dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+
+            />
+
+
 
     </LinearLayout>
 
@@ -94,40 +96,29 @@
         android:layout_gravity="bottom"
         android:gravity="center_horizontal"
         android:orientation="vertical">
+
         <Button
-            android:id="@+id/btn_reservar"
-            android:layout_width="match_parent"
+            android:id="@+id/btn_crear"
+            android:layout_width="237dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:layout_marginTop="16dp"
-            android:paddingEnd="70dp"
-            android:paddingStart="90dp"
-            android:text="Reservar"
-            android:padding="12dp"
             android:backgroundTint="@color/verde"
+            android:text="Crear"
             android:textColor="@color/white"
-            android:drawableEnd="@drawable/exit"
             />
-
 
         <Button
             android:id="@+id/btn_volver"
-            android:layout_width="match_parent"
+            android:layout_width="237dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="100dp"
-            android:paddingEnd="70dp"
-            android:paddingStart="90dp"
-            android:text="Volver"
-            android:padding="12dp"
+            android:layout_marginBottom="110dp"
             android:backgroundTint="@color/verde"
+            android:text="Volver"
             android:textColor="@color/white"
-            android:drawableEnd="@drawable/exit"
             />
-
 
     </LinearLayout>
 

@@ -18,14 +18,14 @@ class Menu_Principal : AppCompatActivity() {
             startActivity(Intent(applicationContext, MainActivity::class.java))
         }
         btn_usuario.setOnClickListener {
-            startActivity(Intent(applicationContext, modUser::class.java))
+            startActivity(Intent(applicationContext, select_user::class.java))
         }
         btn_habitacion.setOnClickListener {
-            startActivity(Intent(applicationContext, modRoom::class.java))
+            startActivity(Intent(applicationContext, mostrar_habitacion::class.java))
         }
 
         btn_servicios.setOnClickListener {
-            startActivity(Intent(applicationContext, modServicio::class.java))
+            startActivity(Intent(applicationContext, mostrar_servicios::class.java))
         }
 
     }

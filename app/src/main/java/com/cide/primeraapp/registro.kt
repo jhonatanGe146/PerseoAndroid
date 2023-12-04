@@ -77,7 +77,7 @@ class registro : AppCompatActivity() {
         val queue = Volley.newRequestQueue(this)
         val url = "https://phytotoxic-sponsor.000webhostapp.com/androidproject/select_documento.php"
         val stringRequest = StringRequest(Request.Method.GET, url,
-            Response.Listener { response ->
+            { response ->
                 val jsonArray = JSONArray(response)
                 val miro = mutableListOf<String>()
                 for (i in 0 until jsonArray.length()) {

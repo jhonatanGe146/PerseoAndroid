@@ -48,7 +48,7 @@ class update_servicio : AppCompatActivity() {
                 }
             }
             queue.add(resultadoPost)
-            startActivity(Intent(applicationContext, mostrar_servicios::class.java))
+            startActivity(Intent(applicationContext, Menu_Principal::class.java))
         }
 
 

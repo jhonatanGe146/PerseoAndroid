@@ -19,20 +19,20 @@ import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
-class mostrar_servicios : AppCompatActivity() {
-    var listaServicio: TableLayout? = null
-    var id_servicio: EditText?=null
+class mostrar_habitacion : AppCompatActivity() {
+    var listaHabitaciones: TableLayout? = null
+    var num_hab: EditText?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mostrar_servicios)
-        listaServicio = findViewById(R.id.listaServicio)
+        setContentView(R.layout.activity_mostrar_habitacion)
+        listaHabitaciones = findViewById(R.id.listahabitaciones)
         val btn_volver = findViewById<Button>(R.id.btn_volver)
         val btn_eliminar = findViewById<Button>(R.id.btn_eliminar)
         val btn_crear = findViewById<Button>(R.id.btn_crear)
-        id_servicio = findViewById<EditText>(R.id.id_serv)
+        num_hab = findViewById<EditText>(R.id.num_hab)
 
         btn_crear.setOnClickListener {
-            startActivity(Intent(applicationContext, registrar_servicio::class.java))
+            startActivity(Intent(applicationContext, crear_habitacion::class.java))
         }
 
         btn_volver.setOnClickListener {
@@ -56,9 +56,9 @@ class mostrar_servicios : AppCompatActivity() {
 
                         return parametros
                     }
-            }
-            queue.add(resultadoPost)
-            startActivity(Intent(applicationContext, mostrar_servicios::class.java))}
+                }
+                queue.add(resultadoPost)
+                startActivity(Intent(applicationContext, mostrar_servicios::class.java))}
             else{
                 Toast.makeText(this, "Debes Poner el Id del servicio", Toast.LENGTH_SHORT).show()
 
@@ -67,35 +67,35 @@ class mostrar_servicios : AppCompatActivity() {
 
 
         var queue = Volley.newRequestQueue(this)
-        var url = "https://phytotoxic-sponsor.000webhostapp.com/androidproject/select_servicios.php"
+        var url = "https://phytotoxic-sponsor.000webhostapp.com/androidproject/select_habitaciones.php"
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
                 try {
                     val jsonArray: JSONArray = response.getJSONArray("data")
 
                     // Crear la fila de encabezados
-                    val encabezados = LayoutInflater.from(this).inflate(R.layout.tabla_servicio, null, false)
-                    val idServicioHeader = encabezados.findViewById<View>(R.id.id_servicio) as TextView
-                    val descripcionServicioHeader = encabezados.findViewById<View>(R.id.descripcion_servicio) as TextView
-                    val precioServicioHeader = encabezados.findViewById<View>(R.id.precio_servicio) as TextView
-                    idServicioHeader.text = "ID Servicio"
-                    descripcionServicioHeader.text = "Descripción"
-                    precioServicioHeader.text = "Precio"
-                    listaServicio?.addView(encabezados)
+                    val encabezados = LayoutInflater.from(this).inflate(R.layout.tabla_habitacion, null, false)
+                    val idServicioHeader = encabezados.findViewById<View>(R.id.num_hab) as TextView
+                    val descripcionServicioHeader = encabezados.findViewById<View>(R.id.id_tipoHab) as TextView
+                    val precioServicioHeader = encabezados.findViewById<View>(R.id.id_EstadoHab) as TextView
+                    idServicioHeader.text = "Numero Habitación"
+                    descripcionServicioHeader.text = "Tipo"
+                    precioServicioHeader.text = "Estado"
+                    listaHabitaciones?.addView(encabezados)
 
                     // Agregar filas de datos
                     for (i in 0 until jsonArray.length()) {
                         val jsonObject = jsonArray.getJSONObject(i)
-                        val filaDatos = LayoutInflater.from(this).inflate(R.layout.tabla_servicio, null, false)
-                        val idServicio = filaDatos.findViewById<View>(R.id.id_servicio) as TextView
-                        val descripcionServicio = filaDatos.findViewById<View>(R.id.descripcion_servicio) as TextView
-                        val precioServicio = filaDatos.findViewById<View>(R.id.precio_servicio) as TextView
+                        val filaDatos = LayoutInflater.from(this).inflate(R.layout.tabla_habitacion, null, false)
+                        val num_hab = filaDatos.findViewById<View>(R.id.num_hab) as TextView
+                        val id_tipohab = filaDatos.findViewById<View>(R.id.id_tipoHab) as TextView
+                        val id_estadohab = filaDatos.findViewById<View>(R.id.id_EstadoHab) as TextView
 
-                        idServicio.text = jsonObject.getString("id_servicio")
-                        descripcionServicio.text = jsonObject.getString("descripcion_servicio")
-                        precioServicio.text = jsonObject.getString("precio_servicio")
+                        num_hab.text = jsonObject.getString("num_habitacion")
+                        id_tipohab.text = jsonObject.getString("tipo_habitacion")
+                        id_estadohab.text = jsonObject.getString("tipo_estado")
 
-                        listaServicio?.addView(filaDatos)
+                        listaHabitaciones?.addView(filaDatos)
                     }
                 } catch (e: JSONException) {
                     e.printStackTrace()
@@ -109,15 +109,15 @@ class mostrar_servicios : AppCompatActivity() {
         queue.add(jsonObjectRequest)
     }
     fun select_servicio (view: View){
-        val id_serv = findViewById<EditText>(R.id.id_serv)
+        val num_hab = findViewById<EditText>(R.id.id_serv)
         var intent = Intent(this , update_servicio::class.java)
-        intent .putExtra("id_serv", id_serv.text.toString())
+        intent .putExtra("num_hab", num_hab.text.toString())
         startActivity(intent)
 
     }
 
     private fun validarCamposVacios(): Boolean {
-        val id = id_servicio?.text.toString()
+        val id = num_hab?.text.toString()
 
         return id.isEmpty()
     }

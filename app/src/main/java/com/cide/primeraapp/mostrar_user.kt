@@ -39,7 +39,7 @@ class mostrar_user : AppCompatActivity() {
         val btn_actualizar = findViewById<Button>(R.id.btn_actualizar)
 
         btn_volver.setOnClickListener {
-            startActivity(Intent(applicationContext, modUser::class.java))
+            startActivity(Intent(applicationContext, Menu_Principal::class.java))
         }
 
 
@@ -61,7 +61,7 @@ class mostrar_user : AppCompatActivity() {
                 }
             }
             queue.add(resultadoPost)
-            startActivity(Intent(applicationContext, modUser::class.java))
+            startActivity(Intent(applicationContext, Menu_Principal::class.java))
         }
 
         btn_actualizar.setOnClickListener {
@@ -85,7 +85,7 @@ class mostrar_user : AppCompatActivity() {
                 }
             }
             queue.add(resultadoPost)
-            startActivity(Intent(applicationContext, modUser::class.java))
+            startActivity(Intent(applicationContext, Menu_Principal::class.java))
         }
 
 
@@ -110,7 +110,7 @@ class mostrar_user : AppCompatActivity() {
             },
             { error: VolleyError ->
                 Toast.makeText(this, "Error Usuario Inexistente", Toast.LENGTH_LONG).show()
-                startActivity(Intent(applicationContext, modUser::class.java))
+                startActivity(Intent(applicationContext, Menu_Principal::class.java))
             }
         )
         queue.add(jsonObjectRequest)

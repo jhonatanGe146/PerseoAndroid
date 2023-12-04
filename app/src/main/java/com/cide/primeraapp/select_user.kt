@@ -16,7 +16,7 @@ class select_user : AppCompatActivity() {
 
 
         btn_volver.setOnClickListener {
-            startActivity(Intent(applicationContext, modUser::class.java))
+            startActivity(Intent(applicationContext, Menu_Principal::class.java))
         }
 
     }
